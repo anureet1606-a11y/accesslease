@@ -34,7 +34,8 @@ Deploy this repository to Vercel using framework **Other**, no build command, an
 - Reviewer notes; simulated revoke, expiry, metadata and permission-scope actions.
 - Recomputed findings and effective paths after every change; independent paths stay effective.
 - Date simulation, JSON dataset validation/import, sample download and report/journal export.
-- Browser-local persistence with before/after records, timestamps and decision reasons.\n- ECDSA-signed event manifest with public-key verification, SHA-256 dataset fingerprint and a hash-linked journal.\n- Offline manifest verifier and a tamper demo that proves altered evidence fails verification.
+- Browser-local persistence with before/after records, timestamps and decision reasons.
+- ECDSA-signed event manifest with public-key verification, SHA-256 dataset fingerprint and a hash-linked journal.\n- Offline manifest verifier and a tamper demo that proves altered evidence fails verification.
 - Reduced-motion support, modal focus management and escaped imported text.
 
 ## Data contract
