@@ -1,6 +1,6 @@
 # Deploy AccessLease through GitHub to Vercel
 
-Repository: https://github.com/Rookie-exe-muj/access-lease
+Repository: https://github.com/anureet1606-a11y/accesslease
 
 ## 1. Upload the complete source
 
@@ -87,12 +87,11 @@ Start.cmd is for local Windows use; it is not a Vercel build/start command.
 
 ## Validation and remaining work
 
-21 existing backend tests passed after the hosting changes. Additional isolated
-checks passed for PostgreSQL schema compilation, driver import, hosted bootstrap,
-blocked public setup and secure cookies. No local database was reset.
-A real PostgreSQL connection and a Vercel build have not been tested yet: those
-require your connected database/project. No GitHub upload or Vercel deployment was
-completed by this session.
+26 backend tests pass with the security activity monitor included. Python compile
+checks, JavaScript syntax checks, and Vercel JSON validation also pass.
+The proposed source is available in the review branch and draft pull request at
+https://github.com/anureet1606-a11y/accesslease/pull/1. A real PostgreSQL connection
+and Vercel deployment still need the project access and private settings listed above.
 
 Official references:
 - https://vercel.com/docs/frameworks/backend/fastapi
