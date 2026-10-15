@@ -1,9 +1,9 @@
 
 const STORAGE='accesslease-access-flow-preview-v1';
 const params=new URLSearchParams(location.search);
-const role=sessionStorage.getItem('accesslease.demo.role');
+const role=params.get('role');
 const routeRole=params.get('role');
-const demoEmail=sessionStorage.getItem('accesslease.demo.email')||'student@example.edu';
+const demoEmail=role==='student'?'maya.kapoor@example.com':'reviewer@example.com';
 if(!['student','organization'].includes(role)||routeRole!==role)location.replace('./index.html');
 const escapeHTML=value=>String(value??'').replace(/[&<>\"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[char]));
 const emptyState={signedIn:false,signIns:[],request:null,risks:[]};
@@ -28,8 +28,8 @@ document.getElementById('closeModal').addEventListener('click',()=>document.getE
 document.getElementById('accountModal').addEventListener('click',e=>{if(e.target.id==='accountModal')e.currentTarget.classList.remove('open')});
 document.getElementById('chooseMaya').addEventListener('click',()=>{document.getElementById('accountModal').classList.remove('open');if(!state.signedIn){state.signedIn=true;state.signIns.push({email:'maya.kapoor@example.com',seen:false,at:new Date().toISOString()});save();showToast('Demo sign-in complete','The organization will see a new identity alert in its inbox.',false)}});
 document.getElementById('requestAccess').addEventListener('click',()=>{if(state.request){showToast('Request already recorded','Reset the demo to try the request again.',false);return}state.request={email:'maya.kapoor@example.com',status:'pending',at:new Date().toISOString()};save();showToast('Access request sent','A new request is waiting in the organization inbox.',false)});
-document.getElementById('signOut').addEventListener('click',()=>{state.signedIn=false;save();sessionStorage.removeItem('accesslease.demo.role');sessionStorage.removeItem('accesslease.demo.email');location.href='./index.html'});
-document.getElementById('roleSignOut').addEventListener('click',()=>{sessionStorage.removeItem('accesslease.demo.role');sessionStorage.removeItem('accesslease.demo.email');location.href='./index.html'});
+document.getElementById('signOut').addEventListener('click',()=>{state.signedIn=false;save();location.href='./index.html'});
+document.getElementById('roleSignOut').addEventListener('click',()=>{location.href='./index.html'});
 document.getElementById('simulateBot').addEventListener('click',()=>{state.risks.push({id:Date.now(),reviewed:false,at:new Date().toISOString()});save();showToast('High-risk sign-in pattern','Automation risk flagged for organization review.',true)});
 document.getElementById('inbox').addEventListener('click',e=>{if(e.target.id==='approve'&&state.request){state.request.status='approved';save();showToast('Access granted','Read-only access is active for the simulated 7-day lease.',false)}if(e.target.id==='reject'&&state.request){state.request.status='denied';save();showToast('Request declined','The user will see the decision in their portal.',false)}});
 document.getElementById('riskList').addEventListener('click',e=>{const id=e.target.dataset.reviewRisk;if(id){const risk=state.risks.find(x=>String(x.id)===id);if(risk)risk.reviewed=true;save()}});
