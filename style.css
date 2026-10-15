@@ -2,3 +2,79 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .integrity-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.integrity-card{padding:22px}.integrity-copy{padding-top:8px}.integrity-copy>b{font-size:13px}.integrity-copy>p,.integrity-note{color:var(--muted);font-size:12px;line-height:1.7}.integrity-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.upload-manifest{display:flex;align-items:center;gap:12px;border:1px dashed #40514c;border-radius:8px;padding:12px;color:#b9c8c3;font-size:11px}.upload-manifest input{max-width:205px;font-size:10px}.integrity-result{margin-top:13px;padding:11px 12px;border-radius:7px;background:#17201e;color:#b5c3bf;font:11px var(--mono);line-height:1.5}.integrity-result.good{background:#132a20;color:var(--mint);border:1px solid #315941}.integrity-result.bad{background:#321c1e;color:var(--red);border:1px solid #60383a}.hash-row{border-bottom:1px solid var(--line);padding:12px 0;display:grid;gap:7px}.hash-row small{font:9px var(--mono);letter-spacing:1px;color:var(--muted)}.hash-row code{font:10px var(--mono);overflow-wrap:anywhere;color:var(--mint)}.integrity-note{margin:16px 0}.text-button:disabled{opacity:.45;cursor:not-allowed}@media(max-width:800px){.integrity-grid{grid-template-columns:1fr}.integrity-card{padding:16px}.upload-manifest{align-items:flex-start;flex-direction:column}}
+
+
+/* Palette refresh: ink navy, electric blue and lilac */
+:root{
+  color-scheme:dark;
+  --bg:#0b1020;
+  --panel:#121a2d;
+  --panel2:#18223a;
+  --line:#2a3654;
+  --text:#edf1ff;
+  --muted:#a0acc9;
+  --mint:#8fb5ff;
+  --red:#ff918e;
+  --amber:#f1cd88;
+  --blue:#b4a5ff;
+}
+body{background:radial-gradient(ellipse at 72% -20%,#26345d 0%,transparent 43%),var(--bg)}
+.sidebar{background:#0d1426}
+.brandmark,.branddot{color:#9dbbff}
+.workspace-icon{background:#243455;color:#cad7ff}
+.nav{color:#a6b1cf}
+.nav:hover{background:#17223c;color:#f5f6ff}
+.nav.active{background:#1d2c4d;color:#abc1ff}
+.nav b{background:#28385d;color:#c8d3ff}
+.live-dot{background:#9dbbff;box-shadow:0 0 10px #9dbbff55}
+.avatar{background:#302d4b;color:#d4caff}
+.topbar{border-color:var(--line)}
+.breadcrumb span{color:#6c7da5}
+.breadcrumb b{color:#e5eaff}
+.environment{color:#b6c6ff}
+.eyebrow{color:#afbdff}
+.button{border-color:#3b4b72;background:#18233b}
+.button:hover{background:#243455}
+.button.primary{background:linear-gradient(120deg,#8fb5ff,#b4a5ff);color:#11182c;border-color:#9bb6ff}
+.button.primary:hover{background:linear-gradient(120deg,#a8c5ff,#c6baff)}
+.button.danger{background:#302126;border-color:#633d46}
+.text-button,.policy-card .number{color:#aebcff}
+.simulation-bar{background:#121a2d}
+.clock{color:#aebcff}
+input,select,textarea{background:#10182b;border-color:#37466a}
+.icon-button{background:#1b2741;border-color:#37466a}
+.stat{background:linear-gradient(130deg,#1a2541,#121a2d)}
+.stat .stat-label{color:#b3bfdc}
+.stat .glyph{color:#99a9dc}
+.stat:nth-child(4) .stat-value{color:#8ee0b6}
+.panel{background:var(--panel)}
+.tag{border-color:#3e4e79;background:#202c4b;color:#c7d0ff}
+.graph-wrap{background:radial-gradient(ellipse at center,#4550a033,transparent 66%)}
+.graph-wrap:before{background-image:radial-gradient(#7181bd38 .7px,transparent .7px)}
+.graph-svg text{fill:#d6ddfa}
+.graph-svg .edge:not(.edge-risk){stroke:#91a8ff}
+.graph-svg .node:hover rect,.graph-svg .node:focus rect{stroke:#c9d3ff}
+.risk-meter{background:#293552}
+th{background:#10182b;color:#9daed3}
+td{border-color:#273451}
+tbody tr:hover{background:#19243b}
+td .avatar{background:#28385d;color:#cad7ff}
+.badge.blue{background:#253252;color:#bdc9ff}
+.badge.green{background:#20382c;color:#8ee0b6}
+.review-button{border-color:#3d4e75}
+.review-button:hover{background:#273556;color:#c0cbff}
+.empty strong{color:#8ee0b6}
+.log-dot{background:#20382c;color:#8ee0b6}
+pre{background:#0f1729}
+dialog{background:#141d33;border-color:#44547c}
+.close{background:#293653}
+.detail-grid,.review-form{border-color:var(--line)}
+.review-form label{color:#bdc8e2}
+.path{background:#0f1729;color:#b8c5ff}
+.guide-steps li{color:#aebcff}
+#toast{background:#1d2c4b;border-color:#526bab;color:#e8ecff}
+.skip{background:#9dbbff;color:#11182c}
+.integrity-result{background:#19233a;color:#bdc8e2}
+.integrity-result.good{background:#132a20;color:#8ee0b6;border-color:#315941}
+.hash-row code{color:#b8c5ff}
+.upload-manifest{border-color:#46577d;color:#c2cceb}
