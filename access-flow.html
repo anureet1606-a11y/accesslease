@@ -73,6 +73,10 @@ body{background:radial-gradient(ellipse at 78% 4%,#55348545 0,transparent 32%),r
 @media(max-width:600px){.hero{min-height:0;padding:20px 17px;border-radius:15px}.hero:after{right:15px;top:-95px}.hero-icon{width:46px;height:46px;border-radius:14px}.content{padding-top:22px}.card{border-radius:13px}.metric{padding:12px}.metric b{font-size:23px}.workspace-cta{padding:16px}.signin-popup{top:70px;right:12px;width:calc(100vw - 24px)}}
 @media(prefers-reduced-motion:reduce){.signin-popup{animation:none}}
 
+/* Keep the heading clear when the live alert is visible. */
+body:has(.signin-popup:not([hidden])) .hero>div:first-child{max-width:calc(100% - 90px)}
+body:has(.signin-popup:not([hidden])) .hero h1{max-width:560px}
+@media(max-width:600px){body:has(.signin-popup:not([hidden])) .hero>div:first-child{max-width:100%}body:has(.signin-popup:not([hidden])) .hero h1{max-width:calc(100% - 12px)}}
 </style>
 </head>
 <body>
