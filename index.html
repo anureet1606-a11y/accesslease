@@ -5,35 +5,24 @@
 <meta name="theme-color" content="#0a1111"><meta name="description" content="AccessLease student and organization access demo.">
 <title>AccessLease · Sign in</title>
 <style>
-:root{color-scheme:dark;--bg:#091111;--panel:#111d1b;--line:#2d433c;--text:#edf7f1;--muted:#a6b9ae;--mint:#79efb4}
+:root{color-scheme:dark;--bg:#091111;--line:#2d433c;--text:#edf7f1;--muted:#a6b9ae;--mint:#79efb4}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(ellipse at 50% -15%,#244438 0,transparent 45%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 main{width:min(100%,560px)}.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:750;letter-spacing:-.5px;margin:0 0 28px;color:inherit;text-decoration:none}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--mint);color:#0a1711;font-size:23px}
-.card{padding:clamp(24px,6vw,42px);border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#14231f,#0e1816);box-shadow:0 25px 90px #0007}.eyebrow{color:var(--mint);font-size:11px;letter-spacing:1.7px;font-weight:750}.card h1{margin:10px 0 8px;font-size:clamp(30px,7vw,42px);line-height:1.08;letter-spacing:-1.4px}.intro{color:var(--muted);margin:0 0 26px}.field{display:grid;gap:8px;margin:0 0 23px}.field label{font-weight:650}.field input{width:100%;padding:14px 15px;border:1px solid #395248;border-radius:11px;background:#0a1411;color:var(--text);font:inherit}.field input:focus{outline:2px solid var(--mint);outline-offset:2px}.roles{display:grid;gap:12px}.role{display:flex;align-items:center;gap:15px;width:100%;padding:16px;text-align:left;border:1px solid #345047;border-radius:14px;background:#12201c;color:var(--text);font:inherit;cursor:pointer;transition:.18s}.role:hover{border-color:var(--mint);background:#192c25;transform:translateY(-1px)}.icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:12px;background:#20392d;color:var(--mint);font-size:20px}.role strong,.role small{display:block}.role small{margin-top:3px;color:var(--muted)}.arrow{margin-left:auto;color:var(--mint);font-size:20px}.note{margin-top:22px;padding:13px 15px;border:1px solid #594f34;border-radius:12px;background:#272314;color:#e7d9ac;font-size:12px}.note strong{display:block;margin-bottom:3px}.foot{margin:19px 0 0;text-align:center;color:#81948a;font-size:12px}
+.card{padding:clamp(24px,6vw,42px);border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#14231f,#0e1816);box-shadow:0 25px 90px #0007}.eyebrow{color:var(--mint);font-size:11px;letter-spacing:1.7px;font-weight:750}.card h1{margin:10px 0 8px;font-size:clamp(30px,7vw,42px);line-height:1.08;letter-spacing:-1.4px}.intro{color:var(--muted);margin:0 0 26px}.roles{display:grid;gap:12px}.role{display:flex;align-items:center;gap:15px;width:100%;padding:16px;text-align:left;border:1px solid #345047;border-radius:14px;background:#12201c;color:var(--text);font:inherit;cursor:pointer;transition:.18s}.role:hover{border-color:var(--mint);background:#192c25;transform:translateY(-1px)}.icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:12px;background:#20392d;color:var(--mint);font-size:20px}.role strong,.role small{display:block}.role small{margin-top:3px;color:var(--muted)}.arrow{margin-left:auto;color:var(--mint);font-size:20px}.note{margin-top:22px;padding:13px 15px;border:1px solid #594f34;border-radius:12px;background:#272314;color:#e7d9ac;font-size:12px}.note strong{display:block;margin-bottom:3px}.foot{margin:19px 0 0;text-align:center;color:#81948a;font-size:12px}
 @media(max-width:420px){body{padding:16px}.card{border-radius:17px}.role{padding:13px}.icon{flex-basis:38px;height:38px}}
 </style>
 </head>
-<body>
-<main>
+<body><main>
 <a class="brand" href="./"><span class="mark">◈</span> AccessLease</a>
 <section class="card" aria-labelledby="title">
 <p class="eyebrow">IDENTITY &amp; ACCESS GOVERNANCE</p><h1 id="title">Sign in to AccessLease</h1>
-<p class="intro">Choose your workspace to continue to the right place.</p>
-<div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@example.edu" required></div>
-<div class="roles" aria-label="Choose a demo role">
-<button class="role" type="button" data-role="student"><span class="icon">♙</span><span><strong>Continue as a student</strong><small>Request the access you need and track its status.</small></span><span class="arrow">→</span></button>
-<button class="role" type="button" data-role="organization"><span class="icon">▤</span><span><strong>Continue as an organization member</strong><small>Review identities, grant permissions, and inspect alerts.</small></span><span class="arrow">→</span></button>
+<p class="intro">Choose your demo identity to continue to the right workspace.</p>
+<div class="roles" aria-label="Choose a demo identity">
+<button class="role" type="button" data-role="student"><span class="icon">♙</span><span><strong>Continue as a student</strong><small>Maya Kapoor · maya.kapoor@example.com</small></span><span class="arrow">→</span></button>
+<button class="role" type="button" data-role="organization"><span class="icon">▤</span><span><strong>Continue as an organization member</strong><small>Sandbox reviewer · reviewer@example.com</small></span><span class="arrow">→</span></button>
 </div>
-<div class="note"><strong>Public demo sign-in</strong>This GitHub Pages preview does not connect to Google or verify email addresses. It collects no password. Your email and demo role stay in this browser tab; use a sample address if you prefer.</div>
+<div class="note"><strong>Public demo sign-in</strong>These are sample identities. This GitHub Pages preview does not connect to Google, verify an email, or collect a password. The role selector is only for demonstrating the two journeys; it is not an access control.</div>
 <p class="foot">AccessLease · Code-e-Manipal PS 18 · Browser-local simulation</p>
-</section>
-</main>
-<script>
-const email=document.getElementById('email');
-document.querySelectorAll('[data-role]').forEach(button=>button.addEventListener('click',()=>{
- if(!email.value.trim()){email.focus();email.reportValidity();return}
- sessionStorage.setItem('accesslease.demo.role',button.dataset.role);
- sessionStorage.setItem('accesslease.demo.email',email.value.trim());
- location.href='access-flow.html?role='+button.dataset.role;
-}));
-</script>
+</section></main>
+<script>document.querySelectorAll('[data-role]').forEach(button=>button.addEventListener('click',()=>{location.href='access-flow.html?role='+button.dataset.role}));</script>
 </body></html>
