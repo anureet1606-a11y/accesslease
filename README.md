@@ -34,7 +34,7 @@ Deploy this repository to Vercel using framework **Other**, no build command, an
 - Reviewer notes; simulated revoke, expiry, metadata and permission-scope actions.
 - Recomputed findings and effective paths after every change; independent paths stay effective.
 - Date simulation, JSON dataset validation/import, sample download and report/journal export.
-- Browser-local persistence with before/after records, timestamps and decision reasons.
+- Browser-local persistence with before/after records, timestamps and decision reasons.\n- ECDSA-signed event manifest with public-key verification, SHA-256 dataset fingerprint and a hash-linked journal.\n- Offline manifest verifier and a tamper demo that proves altered evidence fails verification.
 - Reduced-motion support, modal focus management and escaped imported text.
 
 ## Data contract
@@ -54,9 +54,9 @@ Export the sample JSON in the UI for a complete example. Top-level collections a
 
 Expiry is inclusive at 00:00 UTC on the recorded date. An active grant past expiry is a policy violation but remains effective until explicitly revoked: detecting this gap is the purpose of the tool. Missing metadata is uncertainty, not proof. Grant expiry renewal does not automatically fix excess scope or missing owners. Delegation must remain within every ancestor's resource, scope and expiry; revoked/expired ancestors are violations. The dataset treats a delegation record as an assertion of its source; it does not authenticate the delegator or verify real-world delegation authority.
 
-The priority formula is documented in Policy library. The app computes findings immediately; “Run access audit” records an explicit evaluation snapshot. A review note records the decision without hiding an unresolved finding.
+The priority formula is documented in Policy library. Open Integrity & manifest to create a signed evidence package, upload and verify it independently, or run the tamper demonstration. The app computes findings immediately; “Run access audit” records an explicit evaluation snapshot. A review note records the decision without hiding an unresolved finding.
 
-This is a browser-local, single-reviewer demonstration, not a production IAM system. Persistence uses localStorage; sessions do not synchronize between users or devices. Audit records are inspectable and exportable, but not tamper-proof. No login, real revocation, AI service, secret, external dependency, or server database is used. Use mock data only. Reset clears local state after confirmation. Imports preserve journal entries and record the old and new dataset.
+This is a browser-local, single-reviewer demonstration, not a production IAM system. Persistence uses localStorage; sessions do not synchronize between users or devices. Audit records are inspectable and exportable. The signed manifest provides tamper-evident evidence for the exported snapshot; its private key is session-local and browser storage itself is not tamper-proof. No login, real revocation, AI service, secret, external dependency, or server database is used. Use mock data only. Reset clears local state after confirmation. Imports preserve journal entries and record the old and new dataset.
 
 ## Structure
 
