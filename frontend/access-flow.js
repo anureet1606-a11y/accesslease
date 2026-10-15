@@ -27,3 +27,4 @@ document.getElementById('inbox').addEventListener('click',e=>{if(e.target.id==='
 document.getElementById('riskList').addEventListener('click',e=>{const id=e.target.dataset.reviewRisk;if(id){const risk=state.risks.find(x=>String(x.id)===id);if(risk)risk.reviewed=true;save()}});
 document.getElementById('reset').addEventListener('click',()=>{state={...emptyState,signIns:[],risks:[]};localStorage.removeItem(STORAGE);switchMode('user');showToast('Demo reset','The local preview is back at its starting point.',false)});
 switchMode('user');render();
+
