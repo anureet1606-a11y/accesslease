@@ -96,3 +96,66 @@ dialog{background:#141d33;border-color:#44547c}
 .student-signin-popup__close:hover{color:#fff}
 @keyframes studentNoticeIn{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.student-signin-popup{top:68px;right:12px;width:calc(100vw - 24px)}}
+
+
+/* Aurora workspace refresh */
+:root{--bg:#0a0c1b;--panel:#12172b;--panel2:#191f37;--line:#303752;--text:#f2f2ff;--muted:#a7adc6;--mint:#8fe8dc;--red:#ff8498;--amber:#ffcc78;--blue:#b5a5ff}
+body{min-height:100vh;background:radial-gradient(ellipse at 82% -4%,#794ca833 0,transparent 34%),radial-gradient(ellipse at 18% 40%,#147c7730 0,transparent 42%),linear-gradient(135deg,#090b18,#11152a 55%,#0b0e1b)}
+.sidebar{background:linear-gradient(180deg,#101326f5,#0b0e1af5);border-color:#30334d;box-shadow:12px 0 45px #03040b30}
+.brandmark,.branddot{color:#8fe8dc;text-shadow:0 0 26px #8fe8dc55}
+.workspace{border-color:#41435e;border-radius:13px;background:linear-gradient(130deg,#1c223a,#171a2d);box-shadow:inset 0 1px #ffffff08}
+.workspace-icon,.avatar{border-radius:10px;background:linear-gradient(145deg,#2b5555,#40345f);color:#d9fff7}
+.nav{border-radius:10px;transition:background .18s,color .18s,transform .18s}
+.nav:hover{background:#1a2238;color:#fff;transform:translateX(2px)}
+.nav.active{background:linear-gradient(100deg,#203a42,#272642);color:#a9f3e7;box-shadow:inset 3px 0 #8fe8dc}
+.nav b{border-radius:99px;background:#302d4c;color:#d2c5ff}
+.sandbox-card{border-radius:13px;border-color:#393c56;background:linear-gradient(140deg,#171d32,#141728)}
+.topbar{position:sticky;top:0;z-index:4;background:#0d1020d9;backdrop-filter:blur(18px);border-color:#2a3049}
+.environment{color:#c3b4ff}
+main{padding-top:40px}
+.page-heading{margin-bottom:26px;align-items:flex-end}
+.page-heading h1{font-size:clamp(32px,3.5vw,47px);letter-spacing:-1.9px;font-weight:600}
+.page-heading .eyebrow{color:#8fe8dc}
+.subtitle{font-size:14px;color:#adb3cc}
+.heading-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.button{border-radius:10px;border-color:#414965;background:linear-gradient(145deg,#1c2239,#171c30);transition:transform .18s,box-shadow .18s,background .18s}
+.button:hover{background:linear-gradient(145deg,#262e4c,#202541);box-shadow:0 9px 25px #05061177;transform:translateY(-2px)}
+.button.primary{background:linear-gradient(115deg,#8fe8dc,#b7a2ff);border-color:transparent;color:#111427;box-shadow:0 9px 25px #8fe8dc22}
+.button.primary:hover{background:linear-gradient(115deg,#a9f5e9,#c9baff)}
+.button.alert-preview{background:linear-gradient(140deg,#242443,#1a2839);border-color:#625b8b;color:#dbd4ff}
+.button.alert-preview span{color:#9df1de}
+.simulation-bar{border-radius:13px;background:linear-gradient(110deg,#151b31,#15192b);border-color:#343a55;box-shadow:0 12px 32px #05061033}
+.icon-button{border-radius:8px;background:#202641;border-color:#404967}
+.stats{gap:14px}
+.stat{border-radius:15px;border-color:#343a55;background:linear-gradient(145deg,#1a2038,#12172b);box-shadow:0 13px 35px #05061035;transition:transform .18s,border-color .18s}
+.stat:hover{transform:translateY(-3px);border-color:#555777}
+.stat:after{content:"";position:absolute;width:110px;height:110px;right:-48px;top:-60px;border-radius:50%;border:1px solid #b7a2ff33;box-shadow:0 0 0 18px #b7a2ff09,0 0 48px #b7a2ff12}
+.stat .stat-label{position:relative;z-index:1;color:#c0c4d9}
+.stat .glyph{color:#b6a8ff}
+.stat:nth-child(2) .stat-value{color:#ff8498}
+.stat:nth-child(3) .stat-value{color:#ffcc78}
+.stat:nth-child(4) .stat-value{color:#8fe8dc}
+.panel{border-radius:15px;background:linear-gradient(150deg,#151a2e,#111628);border-color:#343a55;box-shadow:0 16px 42px #04050d35}
+.panel-head{border-color:#303650;background:linear-gradient(100deg,#191f35,#151a2e)}
+.panel-head .tag{border-radius:99px;border-color:#48456c;background:#272641;color:#d2c5ff}
+.graph-wrap{background:radial-gradient(ellipse at center,#654c9b31,transparent 66%)}
+.graph-wrap:before{background-image:radial-gradient(#9a8ad533 .7px,transparent .7px)}
+.graph-svg .edge:not(.edge-risk){stroke:#9bafff}
+.graph-svg .node:hover rect,.graph-svg .node:focus rect{stroke:#9cf1de}
+.signal-body{background:radial-gradient(ellipse at 100% 0,#9c72991c,transparent 55%)}
+th{background:#11172a}
+tbody tr:hover{background:#1c2239}
+.review-button{border-radius:8px}
+.badge{border-radius:99px}
+dialog{background:linear-gradient(145deg,#1c2138,#111628);border-color:#4d5175;border-radius:17px}
+#drawer{background:linear-gradient(150deg,#171c31,#101526)}
+#toast{border-radius:12px;background:#1e2945;border-color:#6575a9;box-shadow:0 12px 45px #0008}
+.student-signin-popup{border-color:#6e6495;background:linear-gradient(145deg,#23253f,#171c30);box-shadow:0 24px 80px #000a,0 0 35px #9d7df322;border-radius:16px}
+.student-signin-popup__icon{background:linear-gradient(145deg,#294f54,#493863);color:#a5f5df;border-radius:12px}
+.student-signin-popup__body p{color:#c5c8dc}
+.student-signin-popup__link{color:#9cf0dd}
+.student-signin-popup__close{color:#a7acc6}
+@media(max-width:1150px){.page-heading{align-items:flex-start}.heading-actions{margin-top:26px}}
+@media(max-width:900px){.page-heading{display:block}.heading-actions{margin-top:18px}.stats{gap:11px}}
+@media(max-width:600px){main{padding-top:25px}.heading-actions{display:grid;grid-template-columns:1fr 1fr}.heading-actions .button{white-space:normal;min-height:44px;padding-inline:10px}.stat{border-radius:12px}.panel{border-radius:12px}}
+@media(prefers-reduced-motion:reduce){.nav,.button,.stat{transition:none}}
