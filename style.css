@@ -78,3 +78,8 @@ dialog{background:#141d33;border-color:#44547c}
 .integrity-result.good{background:#132a20;color:#8ee0b6;border-color:#315941}
 .hash-row code{color:#b8c5ff}
 .upload-manifest{border-color:#46577d;color:#c2cceb}
+
+/* Bring the SVG map nodes into the new indigo palette. */
+#content .graph-svg rect{fill:#1c2846;stroke:#44577f}
+#content .graph-svg circle{fill:#aebcff}
+#content .graph-svg text{fill:#d6ddfa}
