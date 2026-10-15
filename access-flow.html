@@ -18,7 +18,7 @@
 <div class="work-card"><div class="work-title">Manipal sandbox</div><div class="work-sub">Institutional workspace · simulation</div></div>
 <div class="navlabel">PREVIEW MODE</div>
 <div class="mode-buttons" id="roleDisplay" aria-live="polite"><span class="mode active"><span class="ico">♙</span><span class="label" id="roleName">Student portal</span><span class="count hidden" id="pendingCount">0</span></span></div>
-<div class="side-foot"><span class="live"></span>LOCAL PREVIEW<br>Mock identity · no real accounts<br><a href="organization.html" id="fullWorkspace" style="color:#bdcaff;display:none">Open full organization workspace ↗</a><button id="roleSignOut" class="reset" type="button">Sign out</button></div>
+<div class="side-foot"><span class="live"></span>LOCAL PREVIEW<br>Mock identity · no real accounts<br><a href="organization.html?role=organization" id="fullWorkspace" style="color:#bdcaff;display:none">Open full organization workspace ↗</a><button id="roleSignOut" class="reset" type="button">Sign out</button></div>
 </aside>
 <div class="main">
 <header class="top"><div class="crumb">AccessLease <span style="padding:0 8px">/</span><b id="crumb">User portal</b></div><div class="topright"><span class="sandbox">SIMULATION</span><button id="reset" class="reset">Reset demo</button></div></header>
@@ -47,7 +47,7 @@
 <div class="step"><div class="stepnum">3</div><div><b>Wait for organization review</b><p>You see pending, approved, or rejected status here.</p></div></div>
 </div></div></div>
 </section>
-<section id="orgView" class="hidden"><p class="fineprint"><a class="btn" href="organization.html">Open the full AccessLease workspace ↗</a></p>
+<section id="orgView" class="hidden"><p class="fineprint"><a class="btn" href="organization.html?role=organization">Open the full AccessLease workspace ↗</a></p>
 <div class="org-metrics"><div class="metric warn"><span>Awaiting review</span><b id="metricPending">0</b></div><div class="metric"><span>New sign-ins</span><b id="metricSignins">0</b></div><div class="metric danger"><span>Risk alerts</span><b id="metricRisks">0</b></div></div>
 <div class="org-grid">
 <div class="card"><div class="card-head"><div><h2>Organization inbox</h2><p>New identities and access requests appear here.</p></div><span class="scope">MANIPAL SANDBOX</span></div><div id="inbox"></div></div>
