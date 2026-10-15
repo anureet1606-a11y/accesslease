@@ -67,3 +67,31 @@ This is a browser-local, single-reviewer demonstration, not a production IAM sys
 - `engine.test.js`: boundary, policy, role, delegation, import and review tests.
 
 Built for a clear demonstration: show the evidence, make a decision, verify the remaining access.
+
+## Mentor-guided access lifecycle (v2)
+
+The homepage now includes public resources, a student request portal, and an organisation control centre. The same lifecycle control centre is embedded in the full organisation workspace. Its state is separate from the original legacy audit dataset, which remains available below it.
+
+- Public handbook; three fictional protected resources with read-only scope.
+- Purpose-based requests and reviewer decisions with mandatory reasons.
+- Approval durations of 1 minute, 5 minutes, 1 hour or 24 hours, never exceeding the requested duration.
+- Deadline enforcement on every simulated resource read, independent of normal expiry cleanup.
+- Inactivity suspension (30 seconds, 2 minutes or 5 minutes); manual suspension/revocation; blocked resumed activity.
+- Live countdown, closing open resource dialogs after permission ends, cross-tab request/sign-in/block alerts, and JSON activity export.
+- Failure lab: skip normal expiry cleanup, advance demo time and verify the independent check still denies access.
+
+### Presentation walkthrough
+
+1. Open public resources and read the handbook without approval.
+2. Open the student demo and request the research archive for 1 minute, with a purpose.
+3. In another tab on the **same origin**, open the organisation demo or full workspace. Approve for 1 minute with a 2-minute inactivity limit and a decision reason.
+4. Return to the student tab and open the archive; the allowed read appears in the activity trail.
+5. In the organisation tab enable **Simulate expiry-cleanup failure**, then **Advance 61 seconds**.
+6. Try the archive again: the independent deadline check blocks it and records an alert, even though cleanup left the lease active.
+7. For an inactivity demonstration, approve a new 5-minute request with a 30-second inactivity limit, advance 61 seconds, and attempt access again.
+
+### Boundary of this implementation
+
+This is still a **browser-local simulation**, not an authenticated or server-enforced system. It does not connect to Azure/Entra ID, invalidate real tokens, or protect real files. All sample content is public source code. Role selection is a demonstration, not authentication. localStorage is editable and not transactional across simultaneous tab writes; use sequential actions for the demonstration. Notifications synchronise only between tabs on the same browser profile and origin, not between devices. The policy clock's high-water mark is a demo convenience, not a trusted time source. A real implementation needs verified identities and reviewer roles, authoritative server time and storage, permission checks at the resource boundary, immutable central logs and authorised provider integrations. Browser code cannot make those guarantees.
+
+Lifecycle sources: `lease-engine.js`, `lease-store.js`, `lease-ui.js`, `lease.css`, `lease-engine.test.js`. Run `npm test` for both policy models.

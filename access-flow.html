@@ -78,55 +78,6 @@ body:has(.signin-popup:not([hidden])) .hero>div:first-child{max-width:calc(100% 
 body:has(.signin-popup:not([hidden])) .hero h1{max-width:560px}
 @media(max-width:600px){body:has(.signin-popup:not([hidden])) .hero>div:first-child{max-width:100%}body:has(.signin-popup:not([hidden])) .hero h1{max-width:calc(100% - 12px)}}
 </style>
+<link rel="stylesheet" href="lease.css">
 </head>
-<body>
-<div class="app">
-<aside class="sidebar">
-<a class="brand" href="./"><span class="mark">◈</span> AccessLease.</a>
-<div class="work-card"><div class="work-title">Manipal sandbox</div><div class="work-sub">Institutional workspace · simulation</div></div>
-<div class="navlabel">PREVIEW MODE</div>
-<div class="mode-buttons" id="roleDisplay" aria-live="polite"><span class="mode active"><span class="ico">♙</span><span class="label" id="roleName">Student portal</span><span class="count hidden" id="pendingCount">0</span></span></div>
-<div class="side-foot"><span class="live"></span>LOCAL PREVIEW<br>Mock identity · no real accounts<br><a href="organization.html?role=organization" id="fullWorkspace" style="color:#bdcaff;display:none">Open full organization workspace ↗</a><button id="roleSignOut" class="reset" type="button">Sign out</button></div>
-</aside>
-<div class="main">
-<header class="top"><div class="crumb">AccessLease <span style="padding:0 8px">/</span><b id="crumb">User portal</b></div><div class="topright"><span class="sandbox">SIMULATION</span><button id="reset" class="reset">Reset demo</button></div></header>
-<main class="content">
-<section class="hero"><div><div class="eyebrow">ACCESS REQUESTS / PREVIEW</div><h1 id="heroTitle">Your access, with an expiry.</h1><p id="heroText">Sign in, request only what you need, and see what happens next.</p></div><div class="hero-icon" id="heroIcon">♙</div></section>
-<div class="sandbox-note"><strong>Safe demo:</strong> This page uses a made-up identity and local browser state. It does not connect to Google, read Gmail, or contact an organization.</div>
-<section id="userView" class="layout">
-<div class="card">
-<div class="card-head"><div><h2>Your AccessLease identity</h2><p>A simple identity check starts the access journey.</p></div><span class="scope">USER SIDE</span></div>
-<div class="card-body">
-<div id="signedOut" class="user-empty"><div class="user-symbol">♙</div><h3>Use a demo Google account</h3><p>For this preview, choose the sample account below. No Google login page will open and no credentials are collected.</p><button id="signIn" class="btn google"><span class="gmark">G</span> Continue with demo Google</button></div>
-<div id="signedIn" class="hidden">
-<div class="profile-row"><div class="avatar">MK</div><div><div class="profile-name">Maya Kapoor</div><div class="profile-email">maya.kapoor@example.com</div></div><span class="verified">✓ SAMPLE IDENTITY</span></div>
-<div class="section-label">Available resources</div>
-<div class="resource"><div><div class="resource-name">Research archive</div><div class="resource-meta">Project files · Manipal sandbox</div></div><span class="scope">READ ONLY</span></div>
-<div class="resource"><div><div class="resource-name">Cloud console</div><div class="resource-meta">Sandbox environment · Manipal sandbox</div></div><span class="scope">READ ONLY</span></div>
-<div class="resource"><div><div class="resource-name">Robotics lab</div><div class="resource-meta">Equipment booking · Manipal sandbox</div></div><span class="scope">READ ONLY</span></div>
-<div class="actions"><button id="requestAccess" class="btn primary">Request archive access →</button><button id="signOut" class="btn">Sign out</button></div>
-<div id="userAccessState" class="access-state hidden"></div>
-<div class="fineprint">A request asks for one resource and one permission. The organization reviews it before access is shown as active.</div>
-</div>
-</div></div>
-<div class="card"><div class="card-head"><div><h2>How the request works</h2><p>Clear steps for the person asking.</p></div><span class="scope">3 STEPS</span></div><div class="card-body"><div class="steps">
-<div class="step"><div class="stepnum">1</div><div><b>Confirm your identity</b><p>Pick a sample account in this local preview.</p></div></div>
-<div class="step"><div class="stepnum">2</div><div><b>Ask for a specific resource</b><p>The request includes a narrow scope and a short lease.</p></div></div>
-<div class="step"><div class="stepnum">3</div><div><b>Wait for organization review</b><p>You see pending, approved, or rejected status here.</p></div></div>
-</div></div></div>
-</section>
-<section id="orgView" class="hidden"><div class="workspace-cta"><div class="workspace-cta-copy"><strong>Need the full organization workspace?</strong><span>Open the complete dashboard for audits, permissions, policies, and the review queue.</span></div><a class="btn primary workspace-cta-button" href="organization.html?role=organization">Open full workspace <span aria-hidden="true">→</span></a></div>
-<div class="org-metrics"><div class="metric warn"><span>Awaiting review</span><b id="metricPending">0</b></div><div class="metric"><span>New sign-ins</span><b id="metricSignins">0</b></div><div class="metric danger"><span>Risk alerts</span><b id="metricRisks">0</b></div></div>
-<div class="org-grid">
-<div class="card"><div class="card-head"><div><h2>Organization inbox</h2><p>New identities and access requests appear here.</p></div><span class="scope">MANIPAL SANDBOX</span></div><div id="inbox"></div></div>
-<div class="card security"><div class="card-head"><div><h2 class="security-title"><span class="alert-dot"></span> Security watch</h2><p>Automation signals for reviewer attention.</p></div><span class="state-pill denied">RISK SIGNALS</span></div><div id="riskList"></div><div class="card-body" style="padding-top:3px"><button id="simulateBot" class="btn" style="border-color:#77414b;color:#ffaaaa">＋ Simulate suspicious bot attempt</button><div class="fineprint">Risk flags are signals to investigate, not proof that an identity is malicious.</div></div></div>
-</div>
-</section>
-</main>
-</div></div>
-<aside class="signin-popup" id="signinPopup" role="alert" aria-live="assertive" hidden><div class="signin-popup-icon" aria-hidden="true">✦</div><div><strong id="signinPopupTitle">New student sign-in</strong><p id="signinPopupText">A student just entered the preview.</p><a id="signinPopupReview" href="#inbox">Review in organization inbox →</a></div><button class="signin-popup-close" id="dismissSigninPopup" type="button" aria-label="Dismiss new sign-in alert">×</button></aside>
-<div class="toast" id="toast" role="status" aria-live="polite"><b id="toastTitle"></b><p id="toastText"></p></div>
-<div class="overlay" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog"><div class="dialog-head"><span class="eyebrow">DEMO IDENTITY PICKER</span><button class="close" id="closeModal" aria-label="Close">×</button></div><h2 id="modalTitle">Choose a sample account</h2><p>This is a local preview. Selecting this identity will not sign in to Google.</p><button class="account" id="chooseMaya"><span class="avatar">MK</span><span><span class="profile-name">Maya Kapoor</span><span class="profile-email">maya.kapoor@example.com</span></span></button><div class="footnote">Real Google authentication would be connected after the approval flow is agreed and a secure backend is configured.</div></div></div>
-<script src="access-flow.js" defer></script>
-</body>
-</html>
+<body><main style="max-width:1180px;margin:auto;padding:20px"><a class="brand" href="index.html"><span class="mark">◈</span> AccessLease.</a><div id="lease-root" class="lease-root"></div></main><script type="module" src="lease-ui.js"></script></body></html>
